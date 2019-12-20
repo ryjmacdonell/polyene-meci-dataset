@@ -6,15 +6,20 @@ and their amino- and cyano-substituted derivatives.
 
 Usage
 -----
-All data is organized in json files. Each directory contains a json file
+All data is organized in json files. The data is all contained in
+all_poly.json, and each directory contains a json file
 with a subset of the data for convenience. The molecule directories also
 contain xyz files with geometry labels.
 
+Most of the data was calculated at using MR-CIS/6-31G* with a small active
+space. It is sufficient for describing the localized MECI electronic structure,
+and can be used as guess geometries for larger calculations.
+
 Structure
 ---------
-The json file organization is as follows:
+The json files are organized as follows:
 
-- [bkb-label]: a unique label for the backbone
+- [bkb-label]: a unique label for the backbone with the prefix 'x'
     - bkb-name: the backbone molecule name
     - bkb-ncarbon: the number of carbons in the backbone
     - mols: molecules corresponding to the backbone
@@ -36,6 +41,9 @@ The json file organization is as follows:
                 - [opt-label]: a unique label for the geometry
                     - name: the name of the optimized geometry
                     - type: the geometry type (min: minimum, et: ethylenic MECI, kd: kinked-diene MECI)
+                    - n-ind: the central carbon index for pyr/tr MECIs
+                    - db-ind: the carbon index doubly-bonded to n
+                    - sb-ind: the carbon index single-bonded to n
                     - energy: the state energies in a.u.
                     - atm: the atom labels
                     - xyz: the atom cartesian coordinates in a.u.
