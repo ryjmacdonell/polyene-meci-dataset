@@ -9,7 +9,7 @@ Usage
 All data is organized in json files. The data is all contained in
 all_poly.json, and each directory contains a json file
 with a subset of the data for convenience. The molecule directories also
-contain xyz files with geometry labels.
+contain xyz files (in Ångström) with geometry labels.
 
 Most of the data was calculated at using MR-CIS/6-31G* with a small active
 space. It is sufficient for describing the localized MECI electronic structure,
